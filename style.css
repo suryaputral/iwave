@@ -1,0 +1,104 @@
+:root {
+  color-scheme: dark;
+  --bg: #05070b;
+  --panel: rgba(9, 13, 20, 0.68);
+  --panel-border: rgba(214, 229, 242, 0.09);
+  --text: #eef6fb;
+  --muted: rgba(238, 246, 251, 0.64);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(97, 138, 176, 0.12), transparent 28%),
+    radial-gradient(circle at 84% 52%, rgba(92, 134, 118, 0.1), transparent 32%),
+    linear-gradient(180deg, rgba(5, 8, 12, 0.98), rgba(3, 5, 8, 1));
+  color: var(--text);
+  font-family: "Avenir Next", "SF Pro Display", "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.scene {
+  min-height: 100vh;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: minmax(250px, 330px) minmax(0, 1fr);
+  gap: 20px;
+}
+
+.caption {
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px;
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.6vw, 2.3rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.caption p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.62;
+  font-size: 0.96rem;
+}
+
+.viewport {
+  position: relative;
+  min-height: calc(100vh - 36px);
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(208, 226, 240, 0.08);
+  background:
+    radial-gradient(circle at 18% 22%, rgba(132, 180, 218, 0.08), transparent 30%),
+    radial-gradient(circle at 72% 54%, rgba(93, 144, 120, 0.08), transparent 38%),
+    rgba(4, 6, 10, 0.96);
+}
+
+#canvas-root {
+  position: absolute;
+  inset: 0;
+}
+
+#canvas-root canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .scene {
+    grid-template-columns: 1fr;
+  }
+
+  .viewport {
+    min-height: 66vh;
+  }
+}
