@@ -70,6 +70,39 @@ h1 {
   font-size: 0.96rem;
 }
 
+.version-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.version-link {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 229, 242, 0.12);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.84rem;
+  letter-spacing: 0.01em;
+  background: rgba(255, 255, 255, 0.02);
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.version-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(214, 229, 242, 0.22);
+  transform: translateY(-1px);
+}
+
+.version-link.is-current {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 .viewport {
   position: relative;
   min-height: calc(100vh - 36px);
